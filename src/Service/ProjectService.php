@@ -31,10 +31,10 @@ class ProjectService
 
     public function create($request)
     {
-        $projectResulthabib = $this->projectManager->create($request);
+        $projectResulthabib2 = $this->projectManager->create($request);
 
         $response = $this->autoMapping->map(Project::class, CreateProjectResponse::class,
-            $projectResulthabib);
+            $projectResulthabib2);
         $projectImage = new CreateImageRequest();
         $projectImage->image = $request->getImage();
         $projectImage->project = $response->getId();
